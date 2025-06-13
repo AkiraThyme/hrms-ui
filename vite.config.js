@@ -20,7 +20,7 @@ export default defineConfig({
       autoInstall: true,
     }),
     Components({
-      dirs: ['src/components'],
+      dirs: ['src/components', 'src'],
       dts: 'components.d.ts',
       resolvers: [
         IconsResolver({
@@ -38,7 +38,7 @@ export default defineConfig({
         '@vueuse/core',
       ],
       dts: 'auto-imports.d.ts',
-      dirs: ['src/composables', 'src/stores'],
+      dirs: ['src/composables', 'src/stores', 'src'],
       vueTemplate: true,
 
       eslintrc: {
