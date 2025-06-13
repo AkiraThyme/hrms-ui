@@ -9,6 +9,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
+import postcss from './postcss.config.js'
+
 // https://vite.dev/config/
 export default defineConfig({
   clearScreen: true,
@@ -44,6 +46,15 @@ export default defineConfig({
       }
     })
   ],
+
+  css: {
+    postcss
+  },
+
+  server: {
+    port: 4444
+  },
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
