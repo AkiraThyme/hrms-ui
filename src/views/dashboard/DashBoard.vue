@@ -41,7 +41,7 @@ const employee = useEmployeeStore()
 const fetchData = async () => {
   try {
     const response = await employee.getAllEmployees()
-    stats.value.totalEmployees = totalEmployees.value
+    stats.value.totalEmployees = response.data?.length
   } catch (error) {
     console.error('Error fetching employee data:', error)
   }
@@ -53,5 +53,5 @@ onMounted(() => {
   } catch (error) {
     throw error
   }
-}),
+})
 </script>
