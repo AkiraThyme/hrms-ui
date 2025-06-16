@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
   name: "Login",
   setup() {
@@ -40,14 +42,14 @@ export default {
           email: form.email,
           password: form.password,
         });
-        // Redirect to home or dashboard
+        router.push({ name: 'home' });
       } catch (err) {
         error.value = authStore.error;
       }
     };
 
     const redirectToRegister = () => {
-      // Logic to navigate to the Register page
+      router.push({ name: 'register' });
     };
 
     return {

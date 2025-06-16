@@ -3,12 +3,14 @@ import _ from "lodash"
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref({})
-  const isAuthenticated = ref(false)
+  const isAuthenticated = ref(!!localStorage.getItem("token"))
   const error = ref(null)
 
   const login = async (credentials) => {
     try {
       const response = await ServerApi.post('/auth/login', credentials)
+      const token = response.data.user?.token
+      localStorage.setItem("token", token)
       user.value = response.data.user
       isAuthenticated.value = true
       error.value = null
@@ -60,6 +62,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   const logout = () => {
+    localStorage.removeItem("token")
     user.value = {}
     isAuthenticated.value = false
     error.value = null
@@ -72,8 +75,7 @@ export const useAuthStore = defineStore('auth', () => {
     login,
     register,
     employeeRegister,
-    fetchEmployeeId, // Added fetchEmployeeId method
+    fetchEmployeeId,
     logout
   }
-
 })

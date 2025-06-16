@@ -7,6 +7,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       meta: { requiresAuth: true },
+      component: () => import('@/views/dashboard/DashBoard.vue'),
     },
     {
       path: '/login',
@@ -26,8 +27,14 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
 
+  if (!authStore.isAuthenticated && localStorage.getItem("token")) {
+    authStore.isAuthenticated = true
+  }
+
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     next({ name: 'login' })
+  } else if (!to.meta.requiresAuth && authStore.isAuthenticated) {
+    next({ name: 'home' })
   } else {
     next()
   }
