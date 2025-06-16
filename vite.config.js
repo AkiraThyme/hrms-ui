@@ -20,7 +20,8 @@ export default defineConfig({
       autoInstall: true,
     }),
     Components({
-      dirs: ['src/components', 'src'],
+      dirs: ['src/components', 'src/views', 'src/stores', 'src/composables', ],
+      directoryAsNamespace: true,
       dts: 'components.d.ts',
       resolvers: [
         IconsResolver({
