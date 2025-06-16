@@ -8,7 +8,7 @@
         <section class="stats-section">
           <div class="stat-card">
             <h2>Total Employees</h2>
-            <p>{{ stats.totalEmployees }}</p>
+            <p>{{ totalEmployees }}</p>
           </div>
           <div class="stat-card">
             <h2>Departments</h2>
@@ -30,18 +30,19 @@
 
 <script setup>
 const stats = ref({
-  totalEmployees: ref(0),
   departments: 8,
   payslipsGenerated: 450,
   reports: 25
 })
 
-const employee = useEmployeeStore()
+const totalEmployees = ref(0)
+const employeeStore = useEmployeeStore()
 
 const fetchData = async () => {
   try {
-    const response = await employee.getAllEmployees()
-    stats.value.totalEmployees = response.data?.length
+    await employeeStore.fetchEmployees()
+    console.log(employeeStore.employees?.length)
+    totalEmployees.value = employeeStore.employees?.length
   } catch (error) {
     console.error('Error fetching employee data:', error)
   }

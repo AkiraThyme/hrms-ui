@@ -3,6 +3,9 @@
 @use './auth/auth.scss';
 @use './components/dashboard.scss';
 @use './components/sidebar.scss';
+@use './components/employee.scss';
+@use './components/breadcrumbs.scss';
+@use './components/table.scss';
 
 
 .layout-container {

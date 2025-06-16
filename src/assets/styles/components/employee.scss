@@ -1,0 +1,201 @@
+@use '../base.scss';
+
+.employees-container {
+  padding: 1.5rem;
+  color: var(--color-text);
+}
+
+.employees-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.employees-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .refresh-button {
+    padding: 0;
+    background-color: var(--color-buttonbg-info);
+    color: var(--color-background);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      background-color: var(--color-bgi-hover);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .spinner {
+      width: 9px;
+      height: 9px;
+      border: 3px solid var(--color-background);
+      border-top: 3px solid var(--color-buttonbg-info);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  width: 250px;
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-buttonbg-success);
+  color: var(--color-background);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-bgs-hover);
+  }
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.employees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-background-soft);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.employees-table th,
+.employees-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.employees-table th {
+  cursor: pointer;
+  background-color: var(--color-background-mute);
+  text-align: left;
+  position: relative;
+}
+
+.sort-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--color-heading);
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 0.5rem; /* Add gap between Edit and Delete buttons */
+}
+
+.edit-button {
+  background-color: var(--color-buttonbg-info);
+  color: var(--color-background);
+
+  &:hover {
+    background-color: var(--color-bgi-hover);
+  }
+}
+
+.delete-button {
+  background-color: var(--color-buttonbg-warning);
+  color: var(--color-background);
+
+  &:hover {
+    background-color: var(--color-bgw-hover);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%; /* Make buttons circular */
+  cursor: pointer;
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Ensure consistent size */
+  height: 40px; /* Ensure consistent size */
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  svg {
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #fff;
+  &.active {
+    background: #4caf50;
+  }
+  &.inactive {
+    background: #f44336;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

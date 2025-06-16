@@ -19,6 +19,13 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --vt-b-bg-light-1: #ff4d4f;
+  --vt-b-bg-light-2: #1890ff;
+  --vt-b-bg-light-3: #52c41a;
+  --vt-b-bg-dark-1: #ff7875;
+  --vt-b-bg-dark-2: #40a9ff;
+  --vt-b-bg-dark-3: #73d13d;
 }
 
 /* semantic color variables for this project */
@@ -32,6 +39,15 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+
+  --color-buttonbg-warning: var(--vt-b-bg-light-1);
+  --color-bgw-hover: var(--vt-b-bg-dark-1);
+
+  --color-buttonbg-info: var(--vt-b-bg-light-2);
+  --color-bgi-hover: var(--vt-b-bg-dark-2);
+
+  --color-buttonbg-success: var(--vt-b-bg-light-3);
+  --color-bgs-hover: var(--vt-b-bg-dark-3);
 
   --section-gap: 160px;
 }
@@ -47,6 +63,15 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+
+    --color-buttonbg-warning: var(--vt-b-bg-dark-1);
+    --color-bgw-hover: var(--vt-b-bg-light-1);
+
+    --color-buttonbg-info: var(--vt-b-bg-dark-2);
+    --color-bgi-hover: var(--vt-b-bg-light-2);
+
+    --color-buttonbg-success: var(--vt-b-bg-dark-3);
+    --color-bgs-hover: var(--vt-b-bg-light-3);
   }
 }
 

@@ -20,7 +20,7 @@ export default defineConfig({
       autoInstall: true,
     }),
     Components({
-      dirs: ['src/components', 'src/views', 'src/stores', 'src/composables', ],
+      dirs: ['src/components', 'src/views', 'src/stores', 'src/composables', 'src/router' ],
       directoryAsNamespace: true,
       dts: 'components.d.ts',
       resolvers: [

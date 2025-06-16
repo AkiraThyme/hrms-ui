@@ -8,7 +8,8 @@ export const useEmployeeStore = defineStore('employee', () => {
   const fetchEmployees = async () => {
     try {
       const response = await ServerApi.get('/employees')
-      employees.value = response.data.employees
+      console.log(response)
+      employees.value = response.data
       error.value = null
     } catch (err) {
       error.value = err.response ? err.response?.data?.message : err.message

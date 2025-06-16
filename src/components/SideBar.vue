@@ -3,38 +3,34 @@
     <nav>
       <ul>
         <li>
-          <a
-            :class="{ selected: activeSection === 'employee' }"
-            @click.prevent="navigateTo('employee')"
-          >
-            <i class="icon"><IconMdiAccount /></i>
+          <a :class="{ selected: activeSection === 'employee' }" @click.prevent="navigateTo('employees')">
+            <i class="icon">
+              <MdiShieldAccount />
+            </i>
             Employee
           </a>
         </li>
         <li>
-          <a
-            :class="{ selected: activeSection === 'department' }"
-            @click.prevent="navigateTo('department')"
-          >
-            <i class="icon"><IconMdiOfficeBuilding /></i>
+          <a :class="{ selected: activeSection === 'department' }" @click.prevent="navigateTo('department')">
+            <i class="icon">
+              <IconMdiOfficeBuilding />
+            </i>
             Department
           </a>
         </li>
         <li>
-          <a
-            :class="{ selected: activeSection === 'payslip' }"
-            @click.prevent="navigateTo('payslip')"
-          >
-            <i class="icon"><IconMdiFileDocument /></i>
+          <a :class="{ selected: activeSection === 'payslip' }" @click.prevent="navigateTo('payslip')">
+            <i class="icon">
+              <IconMdiFileDocument />
+            </i>
             Payslip
           </a>
         </li>
         <li>
-          <a
-            :class="{ selected: activeSection === 'reports' }"
-            @click.prevent="navigateTo('reports')"
-          >
-            <i class="icon"><IconMdiChartBar /></i>
+          <a :class="{ selected: activeSection === 'reports' }" @click.prevent="navigateTo('reports')">
+            <i class="icon">
+              <IconMdiChartBar />
+            </i>
             Reports
           </a>
         </li>
@@ -44,10 +40,10 @@
 </template>
 
 <script setup>
-import IconMdiAccount from '~icons/mdi/account';
-import IconMdiOfficeBuilding from '~icons/mdi/office-building';
-import IconMdiFileDocument from '~icons/mdi/file-document';
-import IconMdiChartBar from '~icons/mdi/chart-bar';
+import MdiShieldAccount from '~icons/mdi/shield-account'
+import IconMdiOfficeBuilding from '~icons/mdi/office-building'
+import IconMdiFileDocument from '~icons/mdi/file-document'
+import IconMdiChartBar from '~icons/mdi/chart-bar'
 
 const activeSection = ref(null);
 const router = useRouter();
